@@ -7,4 +7,29 @@
 // //Bonus : Le jeu doit également rappeler au joueur les 
 // // nombres déjà proposés
 
-let n;
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+let m = 1;
+while(m == 1){
+let n = getRandomInt(101);
+console.log(n);
+let r ="";
+for(let i = 1;i <= 9; i++){
+    if(r == ""){
+     r =window.prompt('Entrer un nombre entre 1 et 100');
+    }
+    if (n > r){
+         r =window.prompt('tour : '+i+'Plus grand que :'+r);
+    }if(n < r){
+        r =window.prompt('tour : '+i+'Plus petit que :'+r);
+    }if (n == r){
+        console.log('Succes en '+i+' tentatives.');
+        break;
+    }if(i === 9)
+        console.log('Perdu.')      
+}
+m = window.prompt('Voulez vous rejouer : 1 oui, 0 non.');
+
+}
